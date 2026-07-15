@@ -14,3 +14,9 @@ node_modules/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Site build artifacts
+site/dist/
+site/node_modules/
+site/.astro/
+site/.wrangler/
