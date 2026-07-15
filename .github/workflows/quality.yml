@@ -21,4 +21,5 @@ jobs:
       - uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: site/lighthouserc.json
+          staticDistDir: site/dist
           uploadArtifacts: true
