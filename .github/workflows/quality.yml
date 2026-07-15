@@ -18,8 +18,4 @@ jobs:
       - run: pnpm check
       - run: pnpm test
       - run: pnpm build
-      - uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: lighthouserc.json
-          uploadArtifacts: true
-        working-directory: site
+      - run: npx --yes @lhci/cli autorun --config=lighthouserc.json
