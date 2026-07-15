@@ -1,0 +1,53 @@
+---
+import MemoLayout from '../layouts/MemoLayout.astro';
+
+const fleet = [
+  { name: 'Primary Workstation', id: 'ws-9950x', os: 'Windows 11 Pro', role: 'Development powerhouse — AMD 9950X, RTX 5070 Ti, 96 GB DDR5' },
+  { name: 'NVIDIA DGX Spark', id: 'dgx-spark', os: 'Ubuntu', role: 'AI/ML workloads; will serve the primary innie via vLLM' },
+  { name: 'ThinkPad T14 Gen 6', id: 'lenovo-t14', os: 'Windows 11 Pro', role: 'Mobile workstation' },
+  { name: 'ASUS NUC 15 Pro+', id: 'nuc-285h', os: 'Ubuntu', role: 'Docker host; will run the tunnel to the edge' },
+  { name: 'Minisforum X1 Pro-370', id: 'mini-370', os: 'Ubuntu', role: 'Compact workstation; future receptionist innie' },
+  { name: 'Minisforum X1-255', id: 'mini-255', os: 'Ubuntu', role: 'Compact workstation; future chronicle innie' },
+];
+
+const toolchain = [
+  { area: 'Shell & terminal', items: 'PowerShell 7, Windows Terminal, Oh My Posh' },
+  { area: 'Editors', items: 'VS Code (curated 33-extension keep-list), Sublime Text as git editor' },
+  { area: 'Runtimes', items: 'Node 24 + pnpm via corepack, Python 3.13 managed by uv, .NET, Rust' },
+  { area: 'Git', items: 'Git + delta side-by-side pager, GitHub CLI, Conventional Commits, HTTPS over SSH' },
+  { area: 'CLI daily carry', items: 'ripgrep, fd, fzf, bat, eza, jq, zoxide, hyperfine, tokei, pandoc, ImageMagick' },
+  { area: 'AI', items: 'Claude Code (native install, latest channel) driving most of what the Chronicle documents' },
+];
+---
+<MemoLayout
+  title="Issued Equipment"
+  description="The hardware fleet and daily toolchain behind coltonbearden.com: six machines on a Tailscale mesh, PowerShell 7, uv, pnpm, and a modern CLI kit."
+  docNumber="FC-IE-001"
+  kicker="Facilities"
+>
+  <p>
+    Equipment is issued once, justified always. Every machine below is real,
+    named, and reachable by hostname on a private mesh. Several will soon
+    hold employment on the severed floor.
+  </p>
+  <h2>The Fleet</h2>
+  <table class="doc-table">
+    <tr><th>Machine</th><th>Hostname</th><th>OS</th><th>Assignment</th></tr>
+    {fleet.map((m) => (
+      <tr><td>{m.name}</td><td><code>{m.id}</code></td><td>{m.os}</td><td>{m.role}</td></tr>
+    ))}
+  </table>
+  <h2>The Toolchain</h2>
+  <table class="doc-table">
+    <tr><th>Area</th><th>Issued items</th></tr>
+    {toolchain.map((t) => (
+      <tr><td>{t.area}</td><td>{t.items}</td></tr>
+    ))}
+  </table>
+  <p>
+    Policy highlights: global site-packages stay lean (tools via
+    <code>uv tool install</code>); system packages come from winget; every
+    installation must be justified. The compliance department has never
+    lost this argument.
+  </p>
+</MemoLayout>
