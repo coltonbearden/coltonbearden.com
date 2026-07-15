@@ -32,17 +32,25 @@ const toolchain = [
   </p>
   <h2>The Fleet</h2>
   <table class="doc-table">
-    <tr><th>Machine</th><th>Hostname</th><th>OS</th><th>Assignment</th></tr>
-    {fleet.map((m) => (
-      <tr><td>{m.name}</td><td><code>{m.id}</code></td><td>{m.os}</td><td>{m.role}</td></tr>
-    ))}
+    <thead>
+      <tr><th scope="col">Machine</th><th scope="col">Hostname</th><th scope="col">OS</th><th scope="col">Assignment</th></tr>
+    </thead>
+    <tbody>
+      {fleet.map((m) => (
+        <tr><td>{m.name}</td><td><code>{m.id}</code></td><td>{m.os}</td><td>{m.role}</td></tr>
+      ))}
+    </tbody>
   </table>
   <h2>The Toolchain</h2>
   <table class="doc-table">
-    <tr><th>Area</th><th>Issued items</th></tr>
-    {toolchain.map((t) => (
-      <tr><td>{t.area}</td><td>{t.items}</td></tr>
-    ))}
+    <thead>
+      <tr><th scope="col">Area</th><th scope="col">Issued items</th></tr>
+    </thead>
+    <tbody>
+      {toolchain.map((t) => (
+        <tr><td>{t.area}</td><td>{t.items}</td></tr>
+      ))}
+    </tbody>
   </table>
   <p>
     Policy highlights: global site-packages stay lean (tools via
