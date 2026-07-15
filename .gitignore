@@ -10,6 +10,9 @@ node_modules/
 # Brainstorming visual companion sessions
 .superpowers/
 
+# Playwright MCP session scratch
+.playwright-mcp/
+
 # OS
 Thumbs.db
 Desktop.ini

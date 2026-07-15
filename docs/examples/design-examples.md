@@ -1,0 +1,64 @@
+# Website Design Inspiration
+---
+## Catalog / Registries:
+- https://www.webbyawards.com/
+- https://www.shopify.com/ca/editions
+- https://kingy.ai/
+---
+## Individual Sites
+```
+- https://aiomotors.com/
+- https://air.inc/
+- https://anschutzcollection.org/c
+- https://aquent.com/
+- https://blackflagcreative.com/
+- https://blacklead.studio/
+- https://brand.docusign.com/
+- https://cash.app/
+- https://chaleit.com/
+- https://chariotcreative.com/
+- https://design.cash.app/
+- https://elevenlabs.io/
+- https://imnotabot.sangyoungbae.com/
+- https://josephmark.studio/
+- https://kyu.com/
+- https://limesharp.net/
+- https://madebyon.com/
+- https://monkeys.zip/
+- https://nobl.io/
+- https://readymag.website/
+- https://redeggmarketing.com/
+- https://signs-ai.com/
+- https://suno.com/
+- https://terminal-industries.com/
+- https://upstatement.com/
+- https://whalargroup.com/
+- https://wildlife.org/
+- https://wisk.aero/
+- https://www.121corp.com/
+- https://www.akqa.com/
+- https://www.antinomy.studio/
+- https://www.autodesk.com/
+- https://www.basicagency.com/
+- https://www.celonis.com/
+- https://www.changerstudios.com/
+- https://www.deptagency.com/
+- https://www.deunco.com/
+- https://www.dookiedemastered.com/
+- https://www.ferrara.com/
+- https://www.goodthingsvending.com/
+- https://www.heardislandpebbles.com/
+- https://www.humaan.com/
+- https://www.kindred.studio/
+- https://www.midjourney.com/
+- https://www.paulsmith.com/
+- https://www.pentagram.com/
+- https://www.rejouice.com/
+- https://www.sangyoungbae.com/
+- https://www.shopify.com/ca/editions/spring2026
+- https://www.shopify.com/ca/editions/summer2025
+- https://www.shopify.com/ca/editions/winter2025/tv
+- https://www.shopify.com/ca/editions/winter2026
+- https://www.teyanataylor.com/
+- https://www.vastspace.com/
+```
