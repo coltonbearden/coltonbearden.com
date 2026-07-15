@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "vitest run"
+    "test": "vitest run",
+    "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
