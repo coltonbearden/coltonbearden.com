@@ -7,6 +7,9 @@ node_modules/
 # Claude Code local overrides
 .claude/settings.local.json
 
+# Brainstorming visual companion sessions
+.superpowers/
+
 # OS
 Thumbs.db
 Desktop.ini
