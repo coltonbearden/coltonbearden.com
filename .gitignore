@@ -1,0 +1,13 @@
+# Local reference material — external clone (own .git) + SDK scratch install
+cloudflare/
+
+# Dependencies
+node_modules/
+
+# Claude Code local overrides
+.claude/settings.local.json
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
