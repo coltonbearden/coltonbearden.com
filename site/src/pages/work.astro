@@ -1,0 +1,33 @@
+---
+import MemoLayout from '../layouts/MemoLayout.astro';
+import { projects } from '../data/projects';
+
+const statusLabel = {
+  active: 'ACTIVE',
+  'in-development': 'IN DEVELOPMENT',
+  classified: 'DETAILS SEVERED',
+} as const;
+---
+<MemoLayout
+  title="Completed Works"
+  description="Selected builds by Colton Bearden: the Severed Floor itself, a six-machine homelab fleet, and a Claude Code plugin platform in development."
+  docNumber="FC-CW-000"
+  kicker="Works"
+>
+  <p>
+    The department of completed works acknowledges that some works are not
+    yet completed. They are listed anyway, because the honest ledger is the
+    point of the whole floor.
+  </p>
+  {projects.map((p) => (
+    <section>
+      <h2>{p.title} <span class="stamp">{statusLabel[p.status]}</span></h2>
+      <p class="doc-date">{p.docNumber}</p>
+      <p>{p.summary}</p>
+      <ul>
+        {p.details.map((d) => <li>{d}</li>)}
+      </ul>
+      {p.link && <p><a href={p.link.href}>{p.link.label} →</a></p>}
+    </section>
+  ))}
+</MemoLayout>

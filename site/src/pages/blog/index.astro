@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import MemoLayout from '../../layouts/MemoLayout.astro';
+import { byEditionDesc, docNumber } from '../../utils/chronicle';
+
+const posts = byEditionDesc(await getCollection('chronicle'));
+---
+<MemoLayout
+  title="The FirstCast Chronicle"
+  description="The company newspaper of a company that does not exist: the build-in-public log of the severed floor, edition by edition."
+  docNumber="FC-CHRON-IDX"
+  kicker="Chronicle"
+>
+  <p>
+    All the news that is fit to circulate internally. The Chronicle documents
+    the construction of the severed floor as it happens. New editions are
+    announced by <a href="/rss.xml">RSS</a>.
+  </p>
+  <ul class="directory">
+    {posts.map((p) => (
+      <li>
+        <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+        <span class="dir-route">{docNumber(p.data.edition)} · {p.data.pubDate.toISOString().slice(0, 10)}</span>
+        <p>{p.data.description}</p>
+      </li>
+    ))}
+  </ul>
+</MemoLayout>
