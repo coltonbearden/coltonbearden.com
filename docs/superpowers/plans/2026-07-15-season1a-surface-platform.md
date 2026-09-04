@@ -1,5 +1,7 @@
 # Season 1a — Surface & Platform Implementation Plan
 
+> **Status (2026-09-03):** shipped 2026-07-15 as recorded in `CLAUDE.md`; the checkboxes below were never reconciled and remain unticked except where later evidence was added. Drift since writing: the repo pins `pnpm@11.13.0` (not 10.x), the Lighthouse gate runs `@lhci/cli` directly rather than the treosh action, Web Analytics uses Cloudflare Automatic setup (no beacon in `BaseLayout.astro`), and the GitHub repo moved to `coltonbearden/coltonbearden.com` on 2026-08-22.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Ship the complete Surface (all six "paper twin" routes with real content, RSS, first Chronicle post) deployed as Cloudflare Workers static assets on coltonbearden.com — ending the by-design 522 — plus Web Analytics, MTA-STS, and Lighthouse CI.
@@ -978,7 +980,7 @@ git commit -m "feat: add worker config and platform files"
 
 - [ ] **Step 1: Connect Workers Builds** `[MANUAL — Dashboard]`
 
-Dashboard → Workers & Pages → `coltonbearden-com` → Settings → Builds → Connect repository → `FirstCastSolutions423/coltonbearden.com`, branch `main`. Root directory: `site`. Build command: `pnpm install --frozen-lockfile && pnpm build`. Deploy command: `pnpm exec wrangler deploy`. Enable non-production branch builds (preview URLs).
+Dashboard → Workers & Pages → `coltonbearden-com` → Settings → Builds → Connect repository → `coltonbearden/coltonbearden.com` (originally `FirstCastSolutions423/coltonbearden.com`; reconnected after the 2026-08-22 repo transfer), branch `main`. Root directory: `site`. Build command: `pnpm install --frozen-lockfile && pnpm build`. Deploy command: `pnpm exec wrangler deploy`. Enable non-production branch builds (preview URLs).
 
 - [ ] **Step 2: DNS checkpoint — STOP, get explicit user confirmation**
 
