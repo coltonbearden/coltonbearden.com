@@ -21,7 +21,7 @@ export const projects: Project[] = [
       'AI innies: Cloudflare Agents SDK (Durable Objects) fronting vLLM on an NVIDIA DGX Spark via Cloudflare Tunnel, with Workers AI covering outages.',
       'World: React Three Fiber + Theatre.js, arriving one room at a time.',
     ],
-    link: { href: 'https://github.com/FirstCastSolutions423/coltonbearden.com', label: 'Repository' },
+    link: { href: 'https://github.com/coltonbearden/coltonbearden.com', label: 'Repository' },
   },
   {
     slug: 'fleet',
