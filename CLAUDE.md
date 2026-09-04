@@ -46,7 +46,8 @@ Four-phase plan: **F** Foundation → **P** Presence → **C** Commercial → **
 - Email: Migadu. Primary mailbox `inbox@coltonbearden.com`; aliases `security@`, `dmarc@`, `tlsrpt@` forward to it.
 - **Cloudflare MCP permission gap:** the MCP token can read/write DNS *records* and Workers *domains/deployments* fine, but returns 401/403 on zone *settings* (`dnssec`, `settings/ssl`, `settings/min_tls_version`, `settings/always_use_https`, `settings/automatic_https_rewrites`, `settings/security_header`) and 10000 auth errors on zone *rulesets* (redirect rules) and account RUM/Web Analytics APIs. Zone settings, redirect rules, and Web Analytics site management are all dashboard-manual — don't burn time retrying via API.
 - Cloudflare error pages don't carry zone security headers (historical footgun from the pre-launch parking placeholder — kept for reference); if a request ever 5xx's, verify edge headers against `https://coltonbearden.com/cdn-cgi/trace` instead.
-- **Known DNS records added outside any plan** (seen 2026-09-03; not leftovers to clean up without asking): `_tailscale-challenge` TXT (2026-07-23), `_acme-challenge` TXT at apex (2026-07-28, a DNS-01 issuance by something outside this repo), `docker-verification` TXT at apex and `answer.` (2026-08-13), `_gh-first-cast-solutions-llc-{e,o}` TXT (2026-07-15, GitHub org domain verification), `*._domainkey` empty DKIM (2026-05-20, pre-Migadu; the specific `key1-3` CNAMEs win).
+- **Known DNS records added outside any plan** (seen 2026-09-03; not leftovers to clean up without asking): `_tailscale-challenge` TXT (2026-07-23), `_acme-challenge` TXT at apex (2026-07-28, a DNS-01 issuance by something outside this repo), `docker-verification` TXT at apex and `answer.` (2026-08-13), `_gh-first-cast-solutions-llc-{e,o}` TXT (2026-07-15, GitHub org domain verification), `*._domainkey` empty DKIM (2026-05-20, pre-Migadu; the specific `key1-3` CNAMEs win). User reviewed the list on 2026-09-04 and chose to keep all of them as-is.
+- `/.well-known/security.txt` (RFC 9116) is served from `site/public/.well-known/security.txt`, contact `security@coltonbearden.com`, **`Expires: 2027-09-01`** — refresh the date before then or the file becomes invalid.
 - Resolvers show Cloudflare's auto-injected CAA `issue`/`issuewild` entries for its own CAs next to the zone's `issuewild ";"` — that is Universal SSL working as designed (the edge cert is a wildcard), not a regression of D6. The edge cert issued 2026-07-15 expires 2026-10-13; do the Phase 1 CAA spot-check at that renewal.
 - This machine's `nslookup`/`Resolve-DnsName` cannot query CAA or DNSKEY record types. Use DNS-over-HTTPS (`curl "https://cloudflare-dns.com/dns-query?name=<name>&type=<type>" -H "accept: application/dns-json"`) or the Cloudflare API.
 
@@ -54,7 +55,7 @@ Four-phase plan: **F** Foundation → **P** Presence → **C** Commercial → **
 
 - **Never delete or overwrite a DNS record without showing the exact before/after and getting explicit user go-ahead.** Several records are deliberate hardening baselines, not leftovers.
 - CAA `issuewild ";"` stays blocked (D6). Relaxing wildcards requires a new decision-log entry.
-- HSTS `preload` stays **off** (D5) until the full HTTPS footprint (Pages + `mta-sts.` subdomain) is stable.
+- HSTS `preload` stays **off** (D5, reaffirmed as D21 on 2026-09-04) until the S1b/S1c subdomains exist and are stable.
 - DMARC tightens one step at a time, each after a clean monitoring window and with user confirmation (D4).
 - Commercial/product work likely belongs on a FirstCast-branded domain, not this one (D9).
 

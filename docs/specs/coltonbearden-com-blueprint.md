@@ -232,6 +232,12 @@ Cloudflare **Tunnel** (`cloudflared`) from the homelab + **Zero Trust Access** p
 | D8 | IaC (OpenTofu) **after** stabilization, not Phase 1 | YAGNI on day 1; import once records settle | IaC-first (slows the fast, low-risk Phase 1) |
 | D9 | Commercial likely on a **FirstCast-branded** surface, not the personal domain | Keeps personal ≠ commercial identity clean | Product directly on coltonbearden.com |
 | D10 | Primary mailbox = **`inbox@coltonbearden.com`**, not `colton@` | User's deliberate choice made during Phase 1 execution (2026-07-14) | `colton@coltonbearden.com` (this doc's original assumption throughout) |
+| D16 | Repo **public** under `coltonbearden/coltonbearden.com`; site links point at `github.com/coltonbearden` (2026-09-03) | /work copy says "built in public"; after the 2026-08-22 transfer the repo had gone private and the link 404'd for visitors | Keep private and link the profile only; keep private and leave a dead repo link |
+| D17 | MTA-STS **`enforce`**, `max_age: 1209600`; TXT id bumped only after the policy is observed live (2026-09-04) | 20 Google TLS-RPT reports 2026-07-15 → 08-25: 32 sessions, 0 failures; enforce eligible since 07-29 | Stay in `testing` longer; bump the id before the deploy (senders would cache the old policy) |
+| D18 | DMARC `p=none → quarantine` (2026-09-04); `p=reject` only after a fresh clean window with new confirmation | D4 one-step-at-a-time; user confirmed a clean `rua` window 07-14 → 09-03 | Jump straight to `reject` |
+| D19 | Dependabot config: weekly, grouped npm (`site/`) + github-actions; **TypeScript semver-major ignored** | Runs had been stuck queued since 07-24; `astro check` refuses TS 7 (`@astrojs/check` peer `^5 \|\| ^6`) | Security-only Dependabot; manual periodic updates |
+| D20 | Dependency refresh stays **in range** (astro 7.2.x, wrangler 4.128.x, TS 6.x); `packageManager` pinned to `pnpm@11.25.0` | pnpm's supply-chain policy held back same-day astro 7.3.x / wrangler 4.129.0; pnpm/action-setup v6 rejects 11.13.0 as a broken release | Force day-old releases via overrides; vitest 5 major; TS 7 |
+| D21 | HSTS `preload` stays **off** (reaffirms D5) although the full-HTTPS precondition is now met | S1b/S1c will add Tunnel-fronted subdomains; preload is effectively one-way | Preload now |
 
 ---
 
