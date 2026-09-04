@@ -1108,7 +1108,7 @@ curl -s "https://cloudflare-dns.com/dns-query?name=_mta-sts.coltonbearden.com&ty
 
 Expected: policy body verbatim (mode `testing`); TXT answer contains `v=STSv1; id=20260715T000000Z`. (Local nslookup limitations documented in CLAUDE.md — use DoH as shown.)
 
-- [ ] **Step 5: Enforce flip** — GATED: wait ≥ 14 days, then check `tlsrpt@` reports show no delivery failures. With user confirmation, edit the policy to `mode: enforce` and `max_age: 1209600`, commit (`feat: enforce mta-sts`), push, and update the TXT id to `v=STSv1; id=<new UTC timestamp>Z`. Re-run Step 4 expecting `enforce`.
+- [x] **Step 5: Enforce flip** — GATED: wait ≥ 14 days, then check `tlsrpt@` reports show no delivery failures. With user confirmation, edit the policy to `mode: enforce` and `max_age: 1209600`, commit (`feat: enforce mta-sts`), push, and update the TXT id to `v=STSv1; id=<new UTC timestamp>Z`. Re-run Step 4 expecting `enforce`. **Done 2026-09-04:** user confirmed clean TLS-RPT on 2026-09-03; `feat: enforce mta-sts` shipped in PR #4 (production deployment `155b3f72`, policy observed live via curl at 07:35Z); TXT id set to `20260904T073853Z` at 07:38:54Z via Cloudflare MCP `PATCH` on record `25de991060c16900a13807a51fdd0b6a`.
 
 ---
 
@@ -1215,7 +1215,7 @@ Also update the "Phases and current state" section: Phase 2 superseded by the Se
 - [ ] Apex + `www` serve HTTPS with valid cert; `www` → apex 301; no 522 anywhere.
 - [ ] First Chronicle post live at `/blog/001-orientation/`; RSS valid (`curl -s https://coltonbearden.com/rss.xml | head -5` shows XML).
 - [ ] Web Analytics receiving pageviews.
-- [ ] MTA-STS policy served over HTTPS (testing now; enforce flip gated per Task 11 Step 5).
+- [x] MTA-STS policy served over HTTPS (testing now; enforce flip gated per Task 11 Step 5). *(Enforce live 2026-09-04 — see Task 11 Step 5.)*
 - [ ] Zero-JS rule holds (Task 10 Step 3 output).
 
 - [ ] **Step 4: Commit**

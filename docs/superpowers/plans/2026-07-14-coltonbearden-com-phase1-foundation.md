@@ -225,8 +225,8 @@ Requires a live mailbox — not automatable.
 
 ### Task 10: DMARC ramp — tighten after monitoring [MANUAL monitor, Cloudflare MCP to edit]
 
-- [ ] Monitor the `dmarc@coltonbearden.com` inbox for aggregate (`rua`) reports for **1–2 weeks** after Task 6. Confirm all reporting sources show `spf=pass` and/or `dkim=pass` with alignment.
-- [ ] Once clean, tighten DMARC to `p=quarantine` (same `PUT` pattern as Task 6, record id `d20df6dfa9f8a92b0b13608f4758df00`, content `v=DMARC1; p=quarantine; rua=mailto:dmarc@coltonbearden.com; fo=1; adkim=s; aspf=s`). Confirm with user before applying.
+- [x] Monitor the `dmarc@coltonbearden.com` inbox for aggregate (`rua`) reports for **1–2 weeks** after Task 6. Confirm all reporting sources show `spf=pass` and/or `dkim=pass` with alignment. *(Window ran 2026-07-14 → 2026-09-03; user confirmed clean on 2026-09-03.)*
+- [x] Once clean, tighten DMARC to `p=quarantine` (same `PUT` pattern as Task 6, record id `d20df6dfa9f8a92b0b13608f4758df00`, content `v=DMARC1; p=quarantine; rua=mailto:dmarc@coltonbearden.com; fo=1; adkim=s; aspf=s`). Confirm with user before applying. **Done 2026-09-04T07:38:54Z** via Cloudflare MCP `PATCH` (before: `p=none`, after: `p=quarantine`, rest of the record unchanged).
 - [ ] After another clean monitoring window, tighten to `p=reject` (content `v=DMARC1; p=reject; rua=mailto:dmarc@coltonbearden.com; fo=1; adkim=s; aspf=s`). Confirm with user before applying — this restores the zone to its original hardened DMARC posture, now with a real, passing sender behind it.
 
 ---
@@ -238,7 +238,7 @@ Requires a live mailbox — not automatable.
 - [x] Sent **and** received a test message from `inbox@coltonbearden.com`. (Mailbox in active use, 2026-07-14.)
 - [x] mail-tester.com ≥ **9/10** (**10/10**, 2026-07-14); SPF + DKIM + DMARC all **pass** at an independent receiver (mail-tester `Authentication-Results`).
 - [x] `strict-transport-security: max-age=31536000; includeSubDomains` served, no `preload` token. (Verified 2026-07-14 via `/cdn-cgi/trace` — CF error pages don't carry the header.)
-- [ ] After monitoring, DMARC tightened to at least `p=quarantine`.
+- [x] After monitoring, DMARC tightened to at least `p=quarantine`. (2026-09-04; `p=reject` still pending its own window.)
 
 ---
 
