@@ -23,3 +23,6 @@ site/dist/
 site/node_modules/
 site/.astro/
 site/.wrangler/
+
+# Session close-out notes (local only; contain zone/record IDs)
+HANDOFF.md
