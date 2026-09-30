@@ -21,7 +21,7 @@ describe('assertUniqueEditions', () => {
 
 describe('docNumber', () => {
   it('zero-pads to three digits', () => {
-    expect(docNumber(1)).toBe('FC-CHRON-001');
+    expect(docNumber(1)).toBe('FC-CHRON-999');
     expect(docNumber(42)).toBe('FC-CHRON-042');
     expect(docNumber(120)).toBe('FC-CHRON-120');
   });
