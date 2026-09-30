@@ -33,7 +33,7 @@ Four-phase plan: **F** Foundation → **P** Presence → **C** Commercial → **
 - **Gate status:**
   - MTA-STS — **closed.** `mode: enforce` / `max_age: 1209600` live since 2026-09-04 (PR #4, production deployment `155b3f72`); `_mta-sts` TXT (`25de991060c16900a13807a51fdd0b6a`) id bumped to `20260904T073853Z` after the policy was observed live. Any future policy change: edit the file, deploy, confirm via curl, then bump the id again.
   - DMARC — **one step left.** `p=quarantine` since 2026-09-04T07:38Z (record `d20df6dfa9f8a92b0b13608f4758df00`), after the user confirmed a clean `rua` window. `p=reject` follows after another clean window (earliest ~2026-09-18) with fresh user confirmation (D4).
-  - Headers — `site/public/_headers` sets nosniff, Referrer-Policy, Permissions-Policy, `X-Frame-Options: DENY` and a CSP, **report-only** since 2026-09-30 while the edge-injected scripts (Web Analytics beacon, JavaScript Detections) are verified in a real browser.
+  - Headers — `site/public/_headers` sets nosniff, Referrer-Policy, Permissions-Policy, `X-Frame-Options: DENY` and an **enforced** CSP since 2026-09-30 (report-only first; a real-browser check of `/`, `/blog/001-orientation/` and `/contact/` showed zero violations with the edge-injected Web Analytics beacon and JavaScript Detections script). Its `script-src` carries `'unsafe-inline'` for the JSD inline script.
 - **Next:** S1b (AI spine) and S1c (the Descent) — see `docs/superpowers/plans/2026-07-15-season1a-surface-platform.md` for the deferred-work split.
 - **Phases 3–4 — deferred/conditional.** Do not build speculatively.
 
