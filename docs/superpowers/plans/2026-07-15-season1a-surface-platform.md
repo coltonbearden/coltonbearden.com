@@ -1,6 +1,6 @@
 # Season 1a — Surface & Platform Implementation Plan
 
-> **Status (2026-09-03):** shipped 2026-07-15 as recorded in `CLAUDE.md`; the checkboxes below were never reconciled and remain unticked except where later evidence was added. Drift since writing: the repo pins `pnpm@11.13.0` (not 10.x), the Lighthouse gate runs `@lhci/cli` directly rather than the treosh action, Web Analytics uses Cloudflare Automatic setup (no beacon in `BaseLayout.astro`), and the GitHub repo moved to `coltonbearden/coltonbearden.com` on 2026-08-22.
+> **Status (2026-09-03):** shipped 2026-07-15 as recorded in `CLAUDE.md`; the checkboxes below were never reconciled and remain unticked except where later evidence was added. Drift since writing: the repo pins `pnpm@11.25.0` (not 10.x), the Lighthouse gate runs `@lhci/cli` directly rather than the treosh action, Web Analytics uses Cloudflare Automatic setup (no beacon in `BaseLayout.astro`), and the GitHub repo moved to `coltonbearden/coltonbearden.com` on 2026-08-22.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -22,7 +22,7 @@
 - Zone facts: zone `coltonbearden.com`, zone_id `bc9faf24541428e9ed5f3687d9ede3ef`. Apex A `192.0.2.1` (record `415158cc70fc5b1ef3b20ae42d530dbe`) and `www` CNAME (record `6ed5bfb8cc3e988c226fb75e886eb055`) are parking placeholders that Task 9 replaces.
 - Cloudflare MCP token can edit DNS records but NOT zone settings (401/403) — zone-setting steps are `[MANUAL — Dashboard]`.
 - Lighthouse ≥ 95 (Performance / Best Practices / SEO) on every Surface route (spec §6 acceptance).
-- All shell commands run from repo root `C:\Users\ColtonBearden\Projects\coltonbearden.com` unless a step says otherwise; `pnpm --dir site <cmd>` runs inside the app.
+- All shell commands run from the repo root unless a step says otherwise; `pnpm --dir site <cmd>` runs inside the app.
 
 ---
 
