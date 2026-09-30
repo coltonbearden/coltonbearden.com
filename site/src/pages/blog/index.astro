@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import MemoLayout from '../../layouts/MemoLayout.astro';
-import { byEditionDesc, docNumber } from '../../utils/chronicle';
+import { assertUniqueEditions, byEditionDesc, docNumber } from '../../utils/chronicle';
 
-const posts = byEditionDesc(await getCollection('chronicle'));
+const posts = byEditionDesc(assertUniqueEditions(await getCollection('chronicle')));
 ---
 <MemoLayout
   title="The FirstCast Chronicle"
