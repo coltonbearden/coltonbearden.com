@@ -1,13 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 
-interface Props { title: string; description: string; docNumber: string; kicker: string }
-const { title, description, docNumber, kicker } = Astro.props;
+interface Props { title: string; description: string; kicker: string }
+const { title, description, kicker } = Astro.props;
 ---
 <BaseLayout title={title} description={description}>
   <article class="memo">
-    <span class="memo-doc">{docNumber}</span>
-    <p class="memo-kicker">{kicker} · Internal Circulation</p>
+    <p class="memo-kicker">{kicker}</p>
     <h1>{title}</h1>
     <slot />
   </article>

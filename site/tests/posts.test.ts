@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { assertUniqueEditions, byEditionDesc, docNumber } from '../src/utils/chronicle';
+import { assertUniqueEditions, byEditionDesc } from '../src/utils/posts';
 
 describe('byEditionDesc', () => {
   it('sorts newest edition first without mutating input', () => {
@@ -13,16 +13,8 @@ describe('byEditionDesc', () => {
 describe('assertUniqueEditions', () => {
   it('throws on a duplicate edition and passes unique ones through', () => {
     const editions = (...ns: number[]) => ns.map((edition) => ({ data: { edition } }));
-    expect(() => assertUniqueEditions(editions(1, 2, 2))).toThrow('Duplicate Chronicle edition(s): 2');
+    expect(() => assertUniqueEditions(editions(1, 2, 2))).toThrow('Duplicate post edition(s): 2');
     const unique = editions(1, 2, 3);
     expect(assertUniqueEditions(unique)).toBe(unique);
-  });
-});
-
-describe('docNumber', () => {
-  it('zero-pads to three digits', () => {
-    expect(docNumber(1)).toBe('FC-CHRON-001');
-    expect(docNumber(42)).toBe('FC-CHRON-042');
-    expect(docNumber(120)).toBe('FC-CHRON-120');
   });
 });

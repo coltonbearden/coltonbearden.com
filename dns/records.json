@@ -1,0 +1,196 @@
+[
+  {
+    "id": "e79e810d81d30d5da110311008b5410f",
+    "type": "AAAA",
+    "name": "coltonbearden.com",
+    "content": "<proxied>",
+    "ttl": 1,
+    "proxied": true
+  },
+  {
+    "id": "d8b3e75a63b78e922dc158d28a55e966",
+    "type": "AAAA",
+    "name": "mta-sts.coltonbearden.com",
+    "content": "<proxied>",
+    "ttl": 1,
+    "proxied": true
+  },
+  {
+    "id": "075f1ed6e977ab3e5b06a8e71f79210d",
+    "type": "AAAA",
+    "name": "www.coltonbearden.com",
+    "content": "<proxied>",
+    "ttl": 1,
+    "proxied": true
+  },
+  {
+    "id": "bb646377f9ea5950a641b45d3787ad00",
+    "type": "CAA",
+    "name": "coltonbearden.com",
+    "content": "0 iodef \"mailto:security@coltonbearden.com\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "a008c9e6116a3ddff35dd2aa4e6c9280",
+    "type": "CAA",
+    "name": "coltonbearden.com",
+    "content": "0 issue \"letsencrypt.org\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "3aa1333040690b2affbcf3af86c6c509",
+    "type": "CAA",
+    "name": "coltonbearden.com",
+    "content": "0 issue \"pki.goog\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "693030de1e9e50372a915bf1727cf668",
+    "type": "CAA",
+    "name": "coltonbearden.com",
+    "content": "0 issue \"ssl.com\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "106e693ea737dd6aab02e112cf065aff",
+    "type": "CAA",
+    "name": "coltonbearden.com",
+    "content": "0 issuewild \";\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "10958dfc6a25851b66578e84564bce8c",
+    "type": "CNAME",
+    "name": "autoconfig.coltonbearden.com",
+    "content": "autoconfig.migadu.com",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "84b50a7a16a9c465515084b01730def0",
+    "type": "CNAME",
+    "name": "key1._domainkey.coltonbearden.com",
+    "content": "key1.coltonbearden.com._domainkey.migadu.com",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "b7395d314fc0f0b48515e7fbdb27b098",
+    "type": "CNAME",
+    "name": "key2._domainkey.coltonbearden.com",
+    "content": "key2.coltonbearden.com._domainkey.migadu.com",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "ef1a772cc08b2bda770dd0a47db96779",
+    "type": "CNAME",
+    "name": "key3._domainkey.coltonbearden.com",
+    "content": "key3.coltonbearden.com._domainkey.migadu.com",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "3678f37d88bbd2c6080e61fef16f0cbe",
+    "type": "MX",
+    "name": "coltonbearden.com",
+    "content": "aspmx1.migadu.com",
+    "ttl": 1,
+    "proxied": false,
+    "priority": 10
+  },
+  {
+    "id": "5974b2fe81e729d4a56b980701aa2e94",
+    "type": "MX",
+    "name": "coltonbearden.com",
+    "content": "aspmx2.migadu.com",
+    "ttl": 1,
+    "proxied": false,
+    "priority": 20
+  },
+  {
+    "id": "1a9b33ea112e6d58c170e9331c4013ee",
+    "type": "TXT",
+    "name": "*._domainkey.coltonbearden.com",
+    "content": "v=DKIM1; p=",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "f4f5ae1e18346d14a0e28774b1f0435d",
+    "type": "TXT",
+    "name": "_acme-challenge.coltonbearden.com",
+    "content": "\"HXjJ_Je36oCTHbgJq5MHUWAkEPvnpEuI9AmVA5oGTkk\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "d20df6dfa9f8a92b0b13608f4758df00",
+    "type": "TXT",
+    "name": "_dmarc.coltonbearden.com",
+    "content": "v=DMARC1; p=quarantine; rua=mailto:dmarc@coltonbearden.com; fo=1; adkim=s; aspf=s",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "25de991060c16900a13807a51fdd0b6a",
+    "type": "TXT",
+    "name": "_mta-sts.coltonbearden.com",
+    "content": "v=STSv1; id=20260904T073853Z",
+    "ttl": 3600,
+    "proxied": false
+  },
+  {
+    "id": "624b29a9906d97222d0a9f0fe1b14ac0",
+    "type": "TXT",
+    "name": "_smtp._tls.coltonbearden.com",
+    "content": "\"v=TLSRPTv1;rua=mailto:tlsrpt@coltonbearden.com\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "0cc83a750b4de580321648e23fa7587b",
+    "type": "TXT",
+    "name": "_tailscale-challenge.coltonbearden.com",
+    "content": "\"v2=P2a9KWC7fNTexUYqDjRURZMQUmNGxPoxajEqKwcoQrfg\"",
+    "ttl": 3600,
+    "proxied": false
+  },
+  {
+    "id": "69e045d3aa70d5dd1fc387f8cfd1faaa",
+    "type": "TXT",
+    "name": "answer.coltonbearden.com",
+    "content": "\"docker-verification=56507248-2977-4e68-a400-cae01290906c\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "85c5e1c8d6c040572e13e9635495133a",
+    "type": "TXT",
+    "name": "coltonbearden.com",
+    "content": "\"docker-verification=56507248-2977-4e68-a400-cae01290906c\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "ee6e4f1d454d3924bb01fb518832f3ff",
+    "type": "TXT",
+    "name": "coltonbearden.com",
+    "content": "\"hosted-email-verify=lz5dhmpu\"",
+    "ttl": 1,
+    "proxied": false
+  },
+  {
+    "id": "e0df484683d50dfc59b1c9c359af5641",
+    "type": "TXT",
+    "name": "coltonbearden.com",
+    "content": "v=spf1 include:spf.migadu.com -all",
+    "ttl": 1,
+    "proxied": false
+  }
+]

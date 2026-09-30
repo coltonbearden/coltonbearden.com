@@ -1,26 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import MemoLayout from '../../layouts/MemoLayout.astro';
-import { assertUniqueEditions, byEditionDesc, docNumber } from '../../utils/chronicle';
+import { assertUniqueEditions, byEditionDesc } from '../../utils/posts';
 
-const posts = byEditionDesc(assertUniqueEditions(await getCollection('chronicle')));
+const posts = byEditionDesc(assertUniqueEditions(await getCollection('posts')));
 ---
 <MemoLayout
-  title="The FirstCast Chronicle"
-  description="The company newspaper of a company that does not exist: the build-in-public log of the severed floor, edition by edition."
-  docNumber="FC-CHRON-IDX"
-  kicker="Chronicle"
+  title="Notes"
+  description="Notes and write-ups by Colton Bearden, newest first."
+  kicker="Notes"
 >
   <p>
-    All the news that is fit to circulate internally. The Chronicle documents
-    the construction of the severed floor as it happens. New editions are
+    Write-ups of what I build and run, newest first. New notes are
     announced by <a href="/rss.xml">RSS</a>.
   </p>
   <ul class="directory">
     {posts.map((p) => (
       <li>
         <a href={`/blog/${p.id}/`}>{p.data.title}</a>
-        <span class="dir-route">{docNumber(p.data.edition)} · {p.data.pubDate.toISOString().slice(0, 10)}</span>
+        <span class="dir-route">{p.data.pubDate.toISOString().slice(0, 10)}</span>
         <p>{p.data.description}</p>
       </li>
     ))}

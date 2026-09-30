@@ -1,16 +1,18 @@
 ---
 title: "Edition 001: Orientation"
-description: "FirstCast Industries announces the severed floor: a 3D world under this website, staffed by AI employees running on real basement hardware. Built in public, starting now."
+description: "The first note, written at launch in July 2026 while the site was built around its original \"severed floor\" concept: what was planned, and why."
 pubDate: 2026-07-15
 edition: 1
 ---
+
+*Written while the site was in its "severed floor" concept; kept as the first note.*
 
 Welcome to the surface offices of coltonbearden.com.
 
 This website is under construction, and the construction is the point.
 What you are reading is the first edition of the Chronicle — the company
-newspaper of FirstCast Industries, a corporation that does not exist,
-documenting the construction of a floor that soon will.
+newspaper of a corporation that does not exist, documenting the
+construction of a floor that soon will.
 
 **What is being built.** Beneath this page, a severed floor: a 3D world
 you will descend into by scrolling. Its employees are AI agents — we

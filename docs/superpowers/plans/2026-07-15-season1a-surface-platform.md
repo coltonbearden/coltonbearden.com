@@ -1,5 +1,7 @@
 # Season 1a — Surface & Platform Implementation Plan
 
+> **Note (2026-09-30):** this plan records the Season 1a build of design candidate A's Surface (D27); it is history, not the current direction.
+
 > **Status (2026-09-03):** shipped 2026-07-15 as recorded in `CLAUDE.md`; the checkboxes below were never reconciled and remain unticked except where later evidence was added. Drift since writing: the repo pins `pnpm@11.25.0` (not 10.x), the Lighthouse gate runs `@lhci/cli` directly rather than the treosh action, Web Analytics uses Cloudflare Automatic setup (no beacon in `BaseLayout.astro`), and the GitHub repo moved to `coltonbearden/coltonbearden.com` on 2026-08-22.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
