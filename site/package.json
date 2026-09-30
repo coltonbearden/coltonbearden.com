@@ -12,6 +12,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
+    "check:links": "node scripts/check-links.mjs",
+    "ci:build": "astro check && vitest run && astro build && node scripts/check-links.mjs",
     "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@lhci/cli": "^0.15.1",
     "typescript": "^6.0.3",
     "vitest": "^5.0.2",
     "wrangler": "^4.141.0"
