@@ -12,11 +12,7 @@ export function assertUniqueEditions<T extends EditionLike>(entries: T[]): T[] {
     seen.add(e.data.edition);
   }
   if (dupes.size) {
-    throw new Error(`Duplicate Chronicle edition(s): ${[...dupes].sort((a, b) => a - b).join(', ')}`);
+    throw new Error(`Duplicate post edition(s): ${[...dupes].sort((a, b) => a - b).join(', ')}`);
   }
   return entries;
-}
-
-export function docNumber(edition: number): string {
-  return `FC-CHRON-${String(edition).padStart(3, '0')}`;
 }

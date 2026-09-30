@@ -11,6 +11,13 @@ updates:
       # @astrojs/check peers typescript ^5 || ^6; revisit when it supports 7
       - dependency-name: typescript
         update-types: ["version-update:semver-major"]
+      # Framework/runtime majors need a decision row first (D26)
+      - dependency-name: astro
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@astrojs/*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: wrangler
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

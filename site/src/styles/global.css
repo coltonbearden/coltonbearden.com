@@ -19,12 +19,11 @@ h1 { font-size: 1.6rem; text-transform: uppercase; }
 h2 { font-size: 1.1rem; text-transform: uppercase; color: var(--ink-soft); }
 code, pre { font-family: var(--mono); font-size: 0.92em; }
 .masthead { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: space-between; align-items: baseline; border-bottom: 3px double var(--ink); padding-bottom: 0.6rem; margin-bottom: 2rem; }
-.wordmark { font-family: var(--mono); font-weight: 700; letter-spacing: 0.14em; text-decoration: none; color: var(--ink); }
+.wordmark { font-family: var(--mono); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
 .masthead nav { display: flex; gap: 0.9rem; font-family: var(--mono); font-size: 0.82rem; text-transform: uppercase; }
 .masthead nav a { text-decoration: none; }
 .memo { border: 1px solid var(--paper-edge); background: #fbf9f5; padding: 1.75rem 1.6rem; box-shadow: 2px 2px 0 var(--paper-edge); }
 .memo-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--ink-soft); text-transform: uppercase; margin: 0 0 0.25rem; }
-.memo-doc { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); float: right; }
 .doc-date { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-soft); }
 .doc-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .doc-table th, .doc-table td { border: 1px solid var(--paper-edge); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
@@ -34,4 +33,3 @@ code, pre { font-family: var(--mono); font-size: 0.92em; }
 .directory li { border-bottom: 1px dotted var(--paper-edge); padding: 0.55rem 0; }
 .directory .dir-route { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); }
 .colophon { margin-top: 3rem; border-top: 3px double var(--ink); padding-top: 0.8rem; font-size: 0.85rem; color: var(--ink-soft); }
-.descend { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }

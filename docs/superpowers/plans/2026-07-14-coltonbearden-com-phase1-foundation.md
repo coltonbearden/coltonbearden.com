@@ -1,5 +1,7 @@
 # coltonbearden.com — Phase 1 (Foundation) Implementation Plan
 
+> **Note (2026-09-30):** domain-lane Phase 1 record; still the source of truth for the zone and email foundation (D28).
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Harden the live `coltonbearden.com` Cloudflare zone (DNSSEC, CAA, TLS, HSTS) and stand up professional email (`inbox@coltonbearden.com` via Migadu — see D10, primary mailbox changed from the blueprint's original `colton@` assumption during execution), per `blueprint.md` §3 (Phase 1 · Foundation).
@@ -12,7 +14,7 @@
 
 ## Global Constraints
 
-- Zone: `coltonbearden.com` — zone_id `bc9faf24541428e9ed5f3687d9ede3ef`, account `9a06f3b33d177e286938eec3240c6679` (FirstCast account). Verified live 2026-07-14 via Cloudflare MCP `GET /zones?name=coltonbearden.com`.
+- Zone: `coltonbearden.com` — zone_id `bc9faf24541428e9ed5f3687d9ede3ef`, account `9a06f3b33d177e286938eec3240c6679` (the zone's Cloudflare account). Verified live 2026-07-14 via Cloudflare MCP `GET /zones?name=coltonbearden.com`.
 - **Permission gap (confirmed live 2026-07-14):** the connected Cloudflare MCP token can read/write DNS records (`GET`/`POST`/`PUT /zones/{id}/dns_records` all succeeded) but **cannot** read or write `dnssec`, `settings/ssl`, `settings/min_tls_version`, `settings/automatic_https_rewrites`, `settings/always_use_https`, or `settings/security_header` (all returned `401`/`403`). Every task touching those settings is marked **[MANUAL — Dashboard]** below; I cannot execute or verify them via API with the current token.
 - Never delete or overwrite a DNS record without showing the exact before/after to the user and getting explicit go-ahead first — several existing records are intentional anti-spoofing placeholders, not accidents (see Current State).
 - CAA `issuewild` stays blocked (`;`) per D6 — do not permit wildcards without a separate decision-log entry.

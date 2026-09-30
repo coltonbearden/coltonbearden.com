@@ -1,12 +1,12 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { assertUniqueEditions, byEditionDesc } from '../utils/chronicle';
+import { assertUniqueEditions, byEditionDesc } from '../utils/posts';
 
 export async function GET(context) {
-  const posts = byEditionDesc(assertUniqueEditions(await getCollection('chronicle')));
+  const posts = byEditionDesc(assertUniqueEditions(await getCollection('posts')));
   return rss({
-    title: 'The FirstCast Chronicle',
-    description: 'Build-in-public log of the severed floor at coltonbearden.com.',
+    title: 'Notes — Colton Bearden',
+    description: 'Notes and write-ups by Colton Bearden.',
     site: context.site,
     items: posts.map((p) => ({
       title: p.data.title,

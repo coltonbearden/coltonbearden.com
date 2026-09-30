@@ -3,26 +3,22 @@ import MemoLayout from '../layouts/MemoLayout.astro';
 import { projects } from '../data/projects';
 
 const statusLabel = {
-  active: 'ACTIVE',
-  'in-development': 'IN DEVELOPMENT',
-  classified: 'DETAILS SEVERED',
+  active: 'Active',
+  'in-development': 'In development',
 } as const;
 ---
 <MemoLayout
-  title="Completed Works"
-  description="Selected builds by Colton Bearden: the Severed Floor itself, a six-machine homelab fleet, and a Claude Code plugin platform in development."
-  docNumber="FC-CW-000"
-  kicker="Works"
+  title="Work"
+  description="Selected projects by Colton Bearden: this site and its domain operations, a six-machine homelab fleet, and a Claude Code plugin platform in development."
+  kicker="Work"
 >
   <p>
-    The department of completed works acknowledges that some works are not
-    yet completed. They are listed anyway, because the honest ledger is the
-    point of the whole floor.
+    Some of these are finished and some aren't. Both kinds are listed,
+    because an honest ledger is more useful than a polished one.
   </p>
   {projects.map((p) => (
     <section>
       <h2>{p.title} <span class="stamp">{statusLabel[p.status]}</span></h2>
-      <p class="doc-date">{p.docNumber}</p>
       <p>{p.summary}</p>
       <ul>
         {p.details.map((d) => <li>{d}</li>)}

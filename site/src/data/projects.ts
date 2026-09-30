@@ -1,8 +1,7 @@
 export interface Project {
   slug: string;
   title: string;
-  docNumber: string;
-  status: 'active' | 'in-development' | 'classified';
+  status: 'active' | 'in-development';
   summary: string;
   details: string[];
   link?: { href: string; label: string };
@@ -10,23 +9,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'severed-floor',
-    title: 'The Severed Floor',
-    docNumber: 'FC-CW-001',
-    status: 'in-development',
+    slug: 'coltonbearden-com',
+    title: 'coltonbearden.com',
+    status: 'active',
     summary:
-      'This website: a Severance-parody 3D world served from the edge, staffed by AI agents running on basement hardware, built in public.',
+      'This site and its domain, run from one public repository: a static Astro site plus the email, DNS and security setup behind it.',
     details: [
-      'Astro Surface deployed as Cloudflare Workers static assets.',
-      'AI innies: Cloudflare Agents SDK (Durable Objects) fronting vLLM on an NVIDIA DGX Spark via Cloudflare Tunnel, with Workers AI covering outages.',
-      'World: React Three Fiber + Theatre.js, arriving one room at a time.',
+      'Astro site deployed as Cloudflare Workers static assets; every change goes through a pull request, and the deploy runs the same checks.',
+      'Email on the domain with SPF, DKIM, DMARC, MTA-STS and TLS reporting in place.',
+      'Security headers with an enforced Content-Security-Policy, and a committed DNS snapshot with a drift check.',
     ],
     link: { href: 'https://github.com/coltonbearden/coltonbearden.com', label: 'Repository' },
   },
   {
     slug: 'fleet',
     title: 'The Fleet',
-    docNumber: 'FC-CW-002',
     status: 'active',
     summary:
       'A six-machine homelab spanning Windows and Ubuntu, joined by a Tailscale mesh, sized for AI inference, containers, and administration.',
@@ -39,13 +36,12 @@ export const projects: Project[] = [
   {
     slug: 'plugin-platform',
     title: 'Claude Code Plugin Platform',
-    docNumber: 'FC-CW-003',
-    status: 'classified',
+    status: 'in-development',
     summary:
-      'A commercial platform for Claude Code plugins, in development. Details are severed until launch.',
+      'A commercial platform for Claude Code plugins, in development. Details will follow when it launches.',
     details: [
       'Front door and billing design are decided; the work is documented in decision logs, not press releases.',
-      'When it nears sellable, the Chronicle will say so.',
+      'When it nears launch, Notes will say so.',
     ],
   },
 ];

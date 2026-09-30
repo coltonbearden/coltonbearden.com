@@ -1,5 +1,7 @@
 # coltonbearden.com — "The Severed Floor" Design Spec
 
+> **Design candidate A — not the design of record since 2026-09-30 (D27).** FirstCast is retired and cannot serve as the fictional corporation; a replacement name is an open decision if A proceeds. World rules below bind candidate A only. D11 (the experiential pivot) is superseded by D27; D13–D15 bind candidate A only; D12 (Workers static assets) still applies site-wide.
+
 > **Status:** Approved by user 2026-07-15 (brainstorming session, all four sections locked).
 > **Supersedes:** blueprint §4 (Phase 2 · Presence) — the content-first Astro presence site. The blueprint remains reference context; this spec is the design of record for the site itself.
 > **Next step:** implementation plan via superpowers:writing-plans, scoped to Season 1.

@@ -1,23 +1,23 @@
 # coltonbearden.com
 
-Infrastructure, planning, and the site behind [coltonbearden.com](https://coltonbearden.com) — personal-professional domain of Colton Bearden.
+The website and the operating record of [coltonbearden.com](https://coltonbearden.com) — Colton Bearden's personal website and a lifelong, multi-purpose domain.
 
 **Production:** https://coltonbearden.com
 
-## Status
+## Status by lane
 
-| Phase | Scope | State |
+The repo works in three lanes (D27, 2026-09-30).
+
+| Lane | Scope | State |
 |---|---|---|
-| 1 · Foundation | Cloudflare zone hardening (DNSSEC, CAA, TLS, HSTS) + Migadu email | ✅ Complete (2026-07-14) |
-| 2 · Presence | Astro site on Cloudflare Pages | Superseded → The Severed Floor (spec 2026-07-15) · Season 1a live |
-| 3 · Commercial | Product front door | Deferred |
-| 4 · Infra | Tunnel + Zero Trust | Optional |
-
-**Season 1a (Surface & Platform):** live 2026-07-15. Next: S1b (AI spine), S1c (the Descent).
+| Public presence | Personal site: about, work, notes (`/blog/`, RSS), uses, contact | ✅ Live — plain personal-site copy on the interim paper/memo look. Next: social links and a GitHub repo catalog |
+| Domain operations | Email (Migadu; DMARC, MTA-STS, TLS-RPT), DNS, CAA, redirect rules, the Workers deploy, `security.txt`, future subdomains | ✅ Foundation complete (2026-07-14). MTA-STS `enforce`; DMARC `p=quarantine` (one step left); enforced CSP; deploy gate with two required checks; DNS snapshot + drift tool |
+| Design | How the presence lane looks | Candidate A (the Severed Floor spec) on file; further candidates will be compared on branches via preview URLs |
 
 ## Docs
 
-- [Design blueprint](docs/specs/coltonbearden-com-blueprint.md)
-- [Phase 1 execution record](docs/superpowers/plans/2026-07-14-coltonbearden-com-phase1-foundation.md)
-- [The Severed Floor design spec](docs/superpowers/specs/2026-07-15-severed-floor-design.md)
-- [Season 1a implementation plan](docs/superpowers/plans/2026-07-15-season1a-surface-platform.md)
+- [Domain lane: registry, registrar, email, DNS snapshot](docs/domain/README.md)
+- [Blueprint and decision log (§10)](docs/specs/coltonbearden-com-blueprint.md)
+- [Phase 1 (domain foundation) execution record](docs/superpowers/plans/2026-07-14-coltonbearden-com-phase1-foundation.md)
+- [Design candidate A: the Severed Floor spec](docs/superpowers/specs/2026-07-15-severed-floor-design.md)
+- [Season 1a plan (candidate A's Surface build)](docs/superpowers/plans/2026-07-15-season1a-surface-platform.md)
