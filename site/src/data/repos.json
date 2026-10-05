@@ -1,0 +1,79 @@
+[
+  {
+    "full_name": "coltonbearden/brainrot",
+    "html_url": "https://github.com/coltonbearden/brainrot",
+    "description": "Self-audit toolkit for Claude: mine your own chat history for corrections and wins, arbitrate findings into a lean rule set, keep memory tidy",
+    "language": "Python",
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-01T21:11:43Z",
+    "topics": [
+      "chat-history",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "developer-tools",
+      "memory-management",
+      "self-audit"
+    ],
+    "archived": false,
+    "fork": false
+  },
+  {
+    "full_name": "coltonbearden/carrel",
+    "html_url": "https://github.com/coltonbearden/carrel",
+    "description": "Read, index, pack and file your documents — from the terminal, for you and your agents.",
+    "language": "Python",
+    "stargazers_count": 2,
+    "pushed_at": "2026-10-05T11:13:28Z",
+    "topics": [
+      "claude-code",
+      "claude-code-plugins",
+      "cli",
+      "file-management",
+      "mcp",
+      "ocr",
+      "pdf"
+    ],
+    "archived": false,
+    "fork": false
+  },
+  {
+    "full_name": "coltonbearden/cb-reapack",
+    "html_url": "https://github.com/coltonbearden/cb-reapack",
+    "description": "ReaPack repository: cb console, a REAPER window for a language model you run yourself (narrator, MIDI variation)",
+    "language": "Lua",
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-05T14:32:03Z",
+    "topics": [],
+    "archived": false,
+    "fork": false
+  },
+  {
+    "full_name": "coltonbearden/coltonbearden.com",
+    "html_url": "https://github.com/coltonbearden/coltonbearden.com",
+    "description": "Infrastructure, planning, and site for coltonbearden.com",
+    "language": "JavaScript",
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-05T20:06:08Z",
+    "topics": [],
+    "archived": false,
+    "fork": false
+  },
+  {
+    "full_name": "coltonbearden/skillwarden",
+    "html_url": "https://github.com/coltonbearden/skillwarden",
+    "description": "npm audit for agent skills: pin, verify, and audit-gate the skills your coding agents execute",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-01T18:28:59Z",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "cli",
+      "skills-sh",
+      "supply-chain-security"
+    ],
+    "archived": false,
+    "fork": false
+  }
+]

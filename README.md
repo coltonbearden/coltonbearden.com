@@ -10,7 +10,7 @@ The repo works in three lanes (D27, 2026-09-30).
 
 | Lane | Scope | State |
 |---|---|---|
-| Public presence | Personal site: about, work, notes (`/blog/`, RSS), uses, contact | ✅ Live — plain personal-site copy on the interim paper/memo look. Next: social links and a GitHub repo catalog |
+| Public presence | Personal site: about, work, notes (`/blog/`, RSS), uses, contact | ✅ Live — plain personal-site copy on the interim paper/memo look, with social links (GitHub, LinkedIn, Instagram) and a catalog of public repositories on `/work/` (D32) |
 | Domain operations | Email (Migadu; DMARC, MTA-STS, TLS-RPT), DNS, CAA, redirect rules, the Workers deploy, `security.txt`, future subdomains | ✅ Foundation complete (2026-07-14). MTA-STS `enforce`; DMARC `p=quarantine` (one step left); enforced CSP; deploy gate with two required checks; DNS snapshot + drift tool |
 | Design | How the presence lane looks | Candidate A (the Severed Floor spec) on file; further candidates will be compared on branches via preview URLs |
 

@@ -236,7 +236,7 @@ Requires a live mailbox — not automatable.
 ## Phase 1 Acceptance Criteria (mirrors blueprint §3 verbatim)
 
 - [x] DNSSEC shows **Active** in Cloudflare; DNSKEY returns keys. (Verified 2026-07-14 via DoH: 2 DNSKEYs, DS at parent, `AD: true`.)
-- [ ] CAA query returns the 5 records (✓ verified via API 2026-07-14); test cert issuance still succeeds — *the currently-served edge cert works, but a post-CAA issuance won't be proven until the next Universal SSL renewal; spot-check then.*
+- [x] CAA query returns the 5 records (✓ verified via API 2026-07-14); test cert issuance still succeeds. (Spot-check 2026-10-05: the 2026-07-15 edge certificates were renewed on 2026-08-27 and 2026-09-12, and all 20 certificates in the transparency log since 2026-07-15 came from a CA in the zone's `issue` set — Google Trust Services 14, SSL.com 4, Let's Encrypt 2.)
 - [x] Sent **and** received a test message from `inbox@coltonbearden.com`. (Mailbox in active use, 2026-07-14.)
 - [x] mail-tester.com ≥ **9/10** (**10/10**, 2026-07-14); SPF + DKIM + DMARC all **pass** at an independent receiver (mail-tester `Authentication-Results`).
 - [x] `strict-transport-security: max-age=31536000; includeSubDomains` served, no `preload` token. (Verified 2026-07-14 via `/cdn-cgi/trace` — CF error pages don't carry the header.)
