@@ -33,15 +33,4 @@ export const projects: Project[] = [
       'MagicDNS everywhere; the mesh is the management plane, and stays private.',
     ],
   },
-  {
-    slug: 'plugin-platform',
-    title: 'Claude Code Plugin Platform',
-    status: 'in-development',
-    summary:
-      'A commercial platform for Claude Code plugins, in development. Details will follow when it launches.',
-    details: [
-      'Front door and billing design are decided; the work is documented in decision logs, not press releases.',
-      'When it nears launch, Notes will say so.',
-    ],
-  },
 ];

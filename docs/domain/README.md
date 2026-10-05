@@ -67,6 +67,8 @@ The records marked "none" were added outside any plan; the owner reviewed them o
 | `/.well-known/mta-sts.txt` | present, `mode: enforce`, `max_age: 1209600` (D17); canonical host `mta-sts.coltonbearden.com` |
 | `/.well-known/webfinger`, `/.well-known/openpgpkey/`, `/.well-known/atproto-did`, `/.well-known/change-password` | not present |
 
+**Identity links.** Every page's footer links the owner's GitHub, LinkedIn and Instagram profiles with `rel="me"` (D32; the list is `site/src/data/links.ts`). That is the site's half of a `rel="me"` identity proof; a profile that links back to `https://coltonbearden.com/` completes it. GitHub's profile website field points back (read 2026-10-05); the other two were not checked.
+
 ## DNS snapshot and drift check
 
 `dns/records.json` is the committed snapshot of the zone: `{id, type, name, content, ttl, proxied, priority}` per record, sorted by type, name, content and id. Record comments and tags (private Cloudflare metadata) are dropped, and a proxied record's content is replaced with `<proxied>` (D28).
@@ -85,7 +87,7 @@ Each becomes real only through a decision row.
 - Homelab apps via Cloudflare Tunnel behind Access.
 - File drops on R2 behind Access.
 - Project subdomains for showcased repositories.
-- Identity proofs: `rel="me"`, WebFinger, Bluesky `_atproto`, OpenPGP WKD.
+- Further identity proofs: WebFinger, Bluesky `_atproto`, OpenPGP WKD (`rel="me"` links are live, D32).
 - Newsletter or podcast feeds on the domain.
 - A status page.
 - A storefront for the reseller business.

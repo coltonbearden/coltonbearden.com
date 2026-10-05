@@ -1,15 +1,20 @@
 ---
 import MemoLayout from '../layouts/MemoLayout.astro';
+import featured from '../data/catalog.json';
 import { projects } from '../data/projects';
+import snapshot from '../data/repos.json';
+import { featuredRepos, repoMeta } from '../utils/catalog';
 
 const statusLabel = {
   active: 'Active',
   'in-development': 'In development',
 } as const;
+
+const repos = featuredRepos(featured, snapshot);
 ---
 <MemoLayout
   title="Work"
-  description="Selected projects by Colton Bearden: this site and its domain operations, a six-machine homelab fleet, and a Claude Code plugin platform in development."
+  description="Selected projects by Colton Bearden: this site and its domain operations, a six-machine homelab fleet, and public repositories on GitHub."
   kicker="Work"
 >
   <p>
@@ -26,4 +31,15 @@ const statusLabel = {
       {p.link && <p><a href={p.link.href}>{p.link.label} →</a></p>}
     </section>
   ))}
+  <section>
+    <h2>Public repositories</h2>
+    <ul class="directory">
+      {repos.map((r) => (
+        <li>
+          <a href={r.html_url}>{r.full_name.split('/')[1]}</a> <span class="dir-route">{repoMeta(r)}</span>
+          {r.description && <><br />{r.description}</>}
+        </li>
+      ))}
+    </ul>
+  </section>
 </MemoLayout>

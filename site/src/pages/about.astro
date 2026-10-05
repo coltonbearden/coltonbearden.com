@@ -1,5 +1,6 @@
 ---
 import MemoLayout from '../layouts/MemoLayout.astro';
+import { links } from '../data/links';
 ---
 <MemoLayout
   title="About"
@@ -21,5 +22,10 @@ import MemoLayout from '../layouts/MemoLayout.astro';
   <p>
     Write-ups live under <a href="/blog/">Notes</a>, and the machines and
     tools behind them are listed under <a href="/uses/">Uses</a>.
+  </p>
+  <p>
+    Elsewhere: {links.map((l, i) => (
+      <>{i > 0 && ', '}<a href={l.href} rel="me">{l.label}</a></>
+    ))}.
   </p>
 </MemoLayout>

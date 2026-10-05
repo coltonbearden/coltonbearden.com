@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { links } from '../data/links';
 
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
@@ -33,6 +34,11 @@ const pageTitle = title === siteName ? title : `${title} — ${siteName}`;
     <slot />
     <footer class="colophon">
       <p>© Colton Bearden · <a href="/contact/">Contact</a> · <a href="/rss.xml">Notes RSS</a></p>
+      <p class="elsewhere">
+        {links.map((l, i) => (
+          <>{i > 0 && ' · '}<a href={l.href} rel="me">{l.label}</a></>
+        ))}
+      </p>
     </footer>
   </body>
 </html>
