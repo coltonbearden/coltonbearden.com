@@ -1,0 +1,32 @@
+name: dependabot-auto-merge
+on:
+  pull_request:
+permissions: {}
+jobs:
+  auto-merge:
+    # Dependabot's own PRs only (D31); main-protection's two required checks stay the gate.
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'coltonbearden/coltonbearden.com'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    steps:
+      # A PR that edits this file would run its own, unreviewed action version with the write token:
+      # the action is skipped for it, so that PR stays a hand merge.
+      - id: scope
+        run: |
+          files=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')
+          if grep -qxF '.github/workflows/dependabot-auto-merge.yml' <<<"$files"; then echo 'self=true' >> "$GITHUB_OUTPUT"; fi
+      - id: metadata
+        if: steps.scope.outputs.self != 'true'
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+      # update-type is the highest change in the PR, so one major keeps a grouped PR manual.
+      - if: steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: gh pr merge --auto --squash "$PR_URL"
+      # Dependabot can push a major into a PR that already has auto-merge on.
+      - if: steps.metadata.outputs.update-type != 'version-update:semver-patch' && steps.metadata.outputs.update-type != 'version-update:semver-minor' && github.event.pull_request.auto_merge != null
+        run: gh pr merge --disable-auto "$PR_URL"

@@ -2,7 +2,7 @@
 
 `coltonbearden.com` is a lifelong, multi-purpose personal domain: it carries the website, email, and every future use (subdomains for apps and services, identity proofs, and so on). This repository is its operating record (D28). The other lanes (public presence and design) are described in the root `CLAUDE.md`.
 
-**Rule:** a new subdomain or a new use of the domain gets a decision row (blueprint §10) and a line in the registry below **before** any record is created. The DNS guardrail still applies: no record is deleted or overwritten without the exact before/after and the owner's go-ahead.
+**Rule:** a new subdomain or a new use of the domain gets a decision row (blueprint §10) and a line in the registry below **before** any record is created. The DNS guardrail still applies: no record is deleted or overwritten without the exact before/after and the owner's go-ahead. One standing exception (D30): the owner's ACME DNS-01 client, run outside this repo, creates and deletes its own `_acme-challenge` TXT records.
 
 ## Registrar and account
 
@@ -37,7 +37,7 @@ Every name in the zone (snapshot `dns/records.json`, 24 records on 2026-09-30). 
 |---|---|---|---|---|---|
 | `coltonbearden.com` (AAAA) | the website | Cloudflare proxy (Worker custom domain, worker `coltonbearden-com`) | presence | 2026-07-15 | D12, D25 |
 | `coltonbearden.com` (MX ×2, SPF TXT, `hosted-email-verify` TXT) | email: Migadu inbound, sender policy, Migadu domain verification | `aspmx1`/`aspmx2.migadu.com`; `include:spf.migadu.com -all` | domain | 2026-05-20 (SPF), 2026-07-14 | D2, D10 |
-| `coltonbearden.com` (CAA ×5) | certificate issuance policy: `letsencrypt.org`, `pki.goog`, `ssl.com`; `issuewild ";"`; iodef → `security@` | — | domain | 2026-07-14 | D6 |
+| `coltonbearden.com` (CAA ×5) | certificate issuance policy: `letsencrypt.org`, `pki.goog`, `ssl.com`; `issuewild ";"`; iodef → `security@` | — | domain | 2026-07-14 | D6, D30 |
 | `coltonbearden.com` (`docker-verification` TXT) | Docker domain verification | — | domain | 2026-08-13 | none (seen 2026-09-03, kept 2026-09-04) |
 | `www` | redirect host: 301 → apex (Single Redirect rule) | Cloudflare proxy (Worker custom domain) | presence | 2026-07-15 | D25 |
 | `mta-sts` | serves `/.well-known/mta-sts.txt`; everything else 301 → apex | Cloudflare proxy (Worker custom domain) | domain | 2026-07-15 | D17, D25 |
@@ -47,7 +47,7 @@ Every name in the zone (snapshot `dns/records.json`, 24 records on 2026-09-30). 
 | `key1`/`key2`/`key3._domainkey` | DKIM keys | CNAME → Migadu | domain | 2026-07-14 | D2 |
 | `*._domainkey` | empty DKIM wildcard (`p=`, all keys revoked); the specific `key1-3` CNAMEs take precedence | — | domain | 2026-05-20 | none (pre-Migadu, kept 2026-09-04) |
 | `autoconfig` | mail-client autoconfiguration | CNAME → `autoconfig.migadu.com` | domain | 2026-07-14 | Phase 1 plan |
-| `_acme-challenge` | TXT left by an ACME DNS-01 issuance of an apex certificate by a client outside this repo | — | domain | 2026-07-28 | none (seen 2026-09-03, kept 2026-09-04) |
+| `_acme-challenge` | ACME DNS-01 challenge TXT for the apex-only Let's Encrypt certificate, written by the owner's DNS-01 client outside this repo; such records can come and go at a renewal | — | domain | 2026-07-28 | D30 |
 | `_tailscale-challenge` | Tailscale domain verification | — | domain | 2026-07-23 | none (seen 2026-09-03, kept 2026-09-04) |
 | `answer` | Docker domain verification (same value as the apex record) | — | domain | 2026-08-13 | none (seen 2026-09-03, kept 2026-09-04) |
 
