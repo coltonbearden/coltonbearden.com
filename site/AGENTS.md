@@ -3,10 +3,10 @@
 When starting the dev server, use background mode:
 
 ```
-astro dev --background
+pnpm dev --background
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Manage the background server with `pnpm exec astro dev stop`, `pnpm exec astro dev status`, and `pnpm exec astro dev logs`.
 
 ## Documentation
 
