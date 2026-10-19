@@ -23,6 +23,3 @@ site/dist/
 site/node_modules/
 site/.astro/
 site/.wrangler/
-
-# Session close-out notes (local scratch only)
-HANDOFF.md
